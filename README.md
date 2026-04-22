@@ -22,7 +22,7 @@ Click “Start the quiz” and choose one answer for each question. At the end, 
 - **Common Good:** Focus on community and relationships  
 
 ## Tools Used
-- Twine (Harlowe)  
+- Twine
 - Basic CSS  
 
 ## Limitations
