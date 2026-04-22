@@ -1,6 +1,6 @@
 # Ethics Quiz (Twine Project)
 Author: Kacie Inscoe, Mason Parker, Noah Pinkley
-
+ 
 ## Description
 This is a quiz where players answer ethical questions. Based on their choices, the game shows which ethical framework they align with.
 
