@@ -140,28 +140,28 @@ b, strong {
 
 (link: &quot;Choose the option with the best overall outcome&quot;)[
 (set: $util to $util + 1)
-(goto: &quot;Results&quot;)
+(goto: &quot;Q6&quot;)
 ]
 
 (link: &quot;Stick to your moral rules&quot;)[
 (set: $just to $just + 1)
-(goto: &quot;Results&quot;)
+(goto: &quot;Q6&quot;)
 ]
 
 (link: &quot;Act based on your character and values&quot;)[
 (set: $virtue to $virtue + 1)
-(goto: &quot;Results&quot;)
+(goto: &quot;Q6&quot;)
 ]
 
 (link: &quot;Do not do it because it interferes with there individual rights&quot;)[
 (set: $rights to $rights + 1)
-(goto: &quot;Results&quot;)
+(goto: &quot;Q6&quot;)
 ]
 
 (link: &quot;Focus on relationships and care for others&quot;)[
 (set: $cgood to $cgood + 1)
-(goto: &quot;Results&quot;)
-]</tw-passagedata><tw-passagedata pid="6" name="Results" tags="" position="375,1050" size="100,100">Your results:
+(goto: &quot;Q6&quot;)
+]</tw-passagedata><tw-passagedata pid="6" name="Results" tags="" position="375,1725" size="100,100">Your results:
 
 (if: $util &gt;= $just and $util &gt;= $virtue and $util &gt;= $rights and $util &gt;= $cgood)[
 You align most with The Utilitarian Approach.
@@ -185,14 +185,114 @@ You align most with The Common Good Approach.
 You focus on what does the most good for the relationships around you and compassion for others.
 ]
 
-[[Restart Quiz-&gt;start]] </tw-passagedata><tw-passagedata pid="7" name="start" tags="" position="375,300" size="100,100">&lt;h1&gt;Ethics Quiz&lt;h2/&gt;
+[[Restart Quiz-&gt;start]]</tw-passagedata><tw-passagedata pid="7" name="start" tags="" position="375,300" size="100,100">&lt;h1&gt;Ethics Quiz&lt;h2/&gt;
 
 Welcome to the Ethics Quiz!
 
 You’ll be given a series of situations. Choose what you would most likely do.
 
 [[Start the quiz-&gt;Q1]]
-(set: $util to 0)(set: $just to 0)(set: $virtue to 0)(set: $rights to 0)(set: $cgood to 0)</tw-passagedata></tw-storydata>
+(set: $util to 0)(set: $just to 0)(set: $virtue to 0)(set: $rights to 0)(set: $cgood to 0)</tw-passagedata><tw-passagedata pid="8" name="Q6" tags="" position="375,1075" size="100,100">You discover a coworker is taking office supplies home for their struggling family.
+
+(link: &quot;Report them because rules must be applied equally to everyone&quot;)[
+(set: $just to $just + 1)
+(goto: &quot;Q7&quot;)
+]
+
+(link: &quot;Ignore it because their family&#39;s right to survival outweighs a corporation&#39;s inventory&quot;)[
+(set: $rights to $rights + 1)
+(goto: &quot;Q7&quot;)
+]
+
+(link: &quot;Talk to them privately to see how you can help their situation&quot;)[
+(set: $cgood to $cgood + 1)
+(goto: &quot;Q7&quot;)
+]
+
+(link: &quot;Overlook it because the small loss to the company is less than the benefit to the family&quot;)[
+(set: $util to $util + 1)
+(goto: &quot;Q7&quot;)
+]</tw-passagedata><tw-passagedata pid="9" name="Q7" tags="" position="375,1200" size="100,100">A team member isn&#39;t contributing to a project, which might lower everyone&#39;s grade.
+
+(link: &quot;Remove their name from the project; it is only fair that they get what they earned&quot;)[
+(set: $just to $just + 1)
+(goto: &quot;Q8&quot;)
+]
+
+(link: &quot;Do the extra work yourself to ensure the whole group still succeeds&quot;)[
+(set: $util to $util + 1)
+(goto: &quot;Q8&quot;)
+]
+
+(link: &quot;Approach them with empathy to understand why they are struggling&quot;)[
+(set: $cgood to $cgood + 1)
+(goto: &quot;Q8&quot;)
+]
+
+(link: &quot;Encourage them to contribute because being diligent is part of a good character&quot;)[
+(set: $virtue to $virtue + 1)
+(goto: &quot;Q8&quot;)
+]</tw-passagedata><tw-passagedata pid="10" name="Q8" tags="" position="375,1325" size="100,100">A local factory provides many jobs but is polluting a nearby stream.
+
+(link: &quot;The factory must follow environmental laws strictly, regardless of the economy&quot;)[
+(set: $just to $just + 1)
+(goto: &quot;Q9&quot;)
+]
+
+(link: &quot;The community has a fundamental right to clean water and health&quot;)[
+(set: $rights to $rights + 1)
+(goto: &quot;Q9&quot;)
+]
+
+(link: &quot;Advocate for a solution that balances job security with environmental health&quot;)[
+(set: $cgood to $cgood + 1)
+(goto: &quot;Q9&quot;)
+]
+
+(link: &quot;Shut it down if the long-term health costs for the many outweigh the short-term wages&quot;)[
+(set: $util to $util + 1)
+(goto: &quot;Q9&quot;)
+]</tw-passagedata><tw-passagedata pid="11" name="Q9" tags="" position="375,1475" size="100,100">You promised to keep a secret, but revealing it could prevent a minor misunderstanding.
+
+(link: &quot;Keep the secret because being a person of your word is essential&quot;)[
+(set: $virtue to $virtue + 1)
+(goto: &quot;Q10&quot;)
+]
+
+(link: &quot;Keep the secret because the person has a right to privacy&quot;)[
+(set: $rights to $rights + 1)
+(goto: &quot;Q10&quot;)
+]
+
+(link: &quot;Tell the truth if it prevents more total confusion and unhappiness&quot;)[
+(set: $util to $util + 1)
+(goto: &quot;Q10&quot;)
+]
+
+(link: &quot;Keep the secret to maintain the trust and bond in your relationship&quot;)[
+(set: $cgood to $cgood + 1)
+(goto: &quot;Q10&quot;)
+]</tw-passagedata><tw-passagedata pid="12" name="Q10" tags="" position="375,1600" size="100,100">You have the opportunity to volunteer for a day or work overtime for extra personal pay.
+
+(link: &quot;Volunteer because it serves the needs of the local community&quot;)[
+(set: $cgood to $cgood + 1)
+(goto: &quot;Results&quot;)
+]
+
+(link: &quot;Volunteer because it is your duty as a citizen to help others&quot;)[
+(set: $just to $just + 1)
+(goto: &quot;Results&quot;)
+]
+
+(link: &quot;Volunteer because it fosters a selfless and generous disposition&quot;)[
+(set: $virtue to $virtue + 1)
+(goto: &quot;Results&quot;)
+]
+
+(link: &quot;Work overtime if you can use that money to create more benefit for others later&quot;)[
+(set: $util to $util + 1)
+(goto: &quot;Results&quot;)
+]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

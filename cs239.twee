@@ -37,6 +37,30 @@ You find a wallet with $200 and the owner's ID.
 ]
 
 
+:: Q10 {"position":"375,1600","size":"100,100"}
+You have the opportunity to volunteer for a day or work overtime for extra personal pay.
+
+(link: "Volunteer because it serves the needs of the local community")[
+(set: $cgood to $cgood + 1)
+(goto: "Results")
+]
+
+(link: "Volunteer because it is your duty as a citizen to help others")[
+(set: $just to $just + 1)
+(goto: "Results")
+]
+
+(link: "Volunteer because it fosters a selfless and generous disposition")[
+(set: $virtue to $virtue + 1)
+(goto: "Results")
+]
+
+(link: "Work overtime if you can use that money to create more benefit for others later")[
+(set: $util to $util + 1)
+(goto: "Results")
+]
+
+
 :: Q2 {"position":"375,550","size":"100,100"}
 A friend asks if you like their new outfit, but you think it looks bad.
 
@@ -116,31 +140,127 @@ You have to make a tough decision that affects others.
 
 (link: "Choose the option with the best overall outcome")[
 (set: $util to $util + 1)
-(goto: "Results")
+(goto: "Q6")
 ]
 
 (link: "Stick to your moral rules")[
 (set: $just to $just + 1)
-(goto: "Results")
+(goto: "Q6")
 ]
 
 (link: "Act based on your character and values")[
 (set: $virtue to $virtue + 1)
-(goto: "Results")
+(goto: "Q6")
 ]
 
 (link: "Do not do it because it interferes with there individual rights")[
 (set: $rights to $rights + 1)
-(goto: "Results")
+(goto: "Q6")
 ]
 
 (link: "Focus on relationships and care for others")[
 (set: $cgood to $cgood + 1)
-(goto: "Results")
+(goto: "Q6")
 ]
 
 
-:: Results {"position":"375,1050","size":"100,100"}
+:: Q6 {"position":"375,1075","size":"100,100"}
+You discover a coworker is taking office supplies home for their struggling family.
+
+(link: "Report them because rules must be applied equally to everyone")[
+(set: $just to $just + 1)
+(goto: "Q7")
+]
+
+(link: "Ignore it because their family's right to survival outweighs a corporation's inventory")[
+(set: $rights to $rights + 1)
+(goto: "Q7")
+]
+
+(link: "Talk to them privately to see how you can help their situation")[
+(set: $cgood to $cgood + 1)
+(goto: "Q7")
+]
+
+(link: "Overlook it because the small loss to the company is less than the benefit to the family")[
+(set: $util to $util + 1)
+(goto: "Q7")
+]
+
+
+:: Q7 {"position":"375,1200","size":"100,100"}
+A team member isn't contributing to a project, which might lower everyone's grade.
+
+(link: "Remove their name from the project; it is only fair that they get what they earned")[
+(set: $just to $just + 1)
+(goto: "Q8")
+]
+
+(link: "Do the extra work yourself to ensure the whole group still succeeds")[
+(set: $util to $util + 1)
+(goto: "Q8")
+]
+
+(link: "Approach them with empathy to understand why they are struggling")[
+(set: $cgood to $cgood + 1)
+(goto: "Q8")
+]
+
+(link: "Encourage them to contribute because being diligent is part of a good character")[
+(set: $virtue to $virtue + 1)
+(goto: "Q8")
+]
+
+
+:: Q8 {"position":"375,1325","size":"100,100"}
+A local factory provides many jobs but is polluting a nearby stream.
+
+(link: "The factory must follow environmental laws strictly, regardless of the economy")[
+(set: $just to $just + 1)
+(goto: "Q9")
+]
+
+(link: "The community has a fundamental right to clean water and health")[
+(set: $rights to $rights + 1)
+(goto: "Q9")
+]
+
+(link: "Advocate for a solution that balances job security with environmental health")[
+(set: $cgood to $cgood + 1)
+(goto: "Q9")
+]
+
+(link: "Shut it down if the long-term health costs for the many outweigh the short-term wages")[
+(set: $util to $util + 1)
+(goto: "Q9")
+]
+
+
+:: Q9 {"position":"375,1475","size":"100,100"}
+You promised to keep a secret, but revealing it could prevent a minor misunderstanding.
+
+(link: "Keep the secret because being a person of your word is essential")[
+(set: $virtue to $virtue + 1)
+(goto: "Q10")
+]
+
+(link: "Keep the secret because the person has a right to privacy")[
+(set: $rights to $rights + 1)
+(goto: "Q10")
+]
+
+(link: "Tell the truth if it prevents more total confusion and unhappiness")[
+(set: $util to $util + 1)
+(goto: "Q10")
+]
+
+(link: "Keep the secret to maintain the trust and bond in your relationship")[
+(set: $cgood to $cgood + 1)
+(goto: "Q10")
+]
+
+
+:: Results {"position":"375,1725","size":"100,100"}
 Your results:
 
 (if: $util >= $just and $util >= $virtue and $util >= $rights and $util >= $cgood)[
@@ -165,7 +285,7 @@ You align most with The Common Good Approach.
 You focus on what does the most good for the relationships around you and compassion for others.
 ]
 
-[[Restart Quiz->start]] 
+[[Restart Quiz->start]]
 
 
 :: start {"position":"375,300","size":"100,100"}
