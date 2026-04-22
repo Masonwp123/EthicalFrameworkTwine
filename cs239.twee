@@ -175,15 +175,59 @@ You focus on what does the most good for the relationships around you and compas
 
 
 :: start {"position":"375,300","size":"100,100"}
-(set: $util to 0)
-(set: $just to 0)
-(set: $virtue to 0)
-(set: $rights to 0)
-(set: $cgood to 0)
-
+<h1>Ethics Quiz<h2/>
 
 Welcome to the Ethics Quiz!
 
 You’ll be given a series of situations. Choose what you would most likely do.
 
 [[Start the quiz->Q1]]
+(set: $util to 0)(set: $just to 0)(set: $virtue to 0)(set: $rights to 0)(set: $cgood to 0)
+
+
+:: StoryStylesheet [stylesheet]
+tw-story {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #183038;
+  color: #2d3436;
+}
+
+tw-passage {
+  padding: 3em;
+  max-width: 650px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+tw-link {
+  display: block;
+  color: #ffffff !important;
+  background-color: #00a8a8;
+  padding: 12px 20px;
+  margin: 12px 0;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: background-color 0.2s, transform 0.1s;
+  text-align: center;
+}
+
+tw-link:hover {
+  background-color: #008e8e;
+  transform: scale(1.01);
+}
+
+tw-sidebar {
+  display: none;
+}
+
+h1, h2, .passage-title {
+  color: #00a8a8;
+  font-weight: 600;
+  margin-bottom: 1.2em;
+}
+
+b, strong {
+  color: #00a8a8;
+}
