@@ -147,31 +147,25 @@ Your results:
 You align most with The Utilitarian Approach.
 
 You focus on outcomes and believe the best action is the one that creates the greatest good for the most people.
-]
-
-(else-if: $just >= $util and $just >= $virtue and $just >= $rights and $just >= $cgood)[
+](else-if: $just >= $util and $just >= $virtue and $just >= $rights and $just >= $cgood)[
 You align most with The Justice Approach.
 
 You believe in following rules and duties, no matter the outcome.
-]
-
-(else-if: $virtue >= $util and $virtue >= $just and $virtue >= $rights and $virtue >= $cgood)[
+](else-if: $virtue >= $util and $virtue >= $just and $virtue >= $rights and $virtue >= $cgood)[
 You align most with The Virtue Approach.
 
 You focus on being a good person and acting with strong moral character.
-]
-
-(else-if: $rights >= $util and $rights >= $just and $rights >= $virtue and $rights >= $cgood)[
+](else-if: $rights >= $util and $rights >= $just and $rights >= $virtue and $rights >= $cgood)[
 You align most with The Rights Approach.
 
 You prioritize the individual rights of yourself and others over anything.
-]
-
-(else:)[
+](else:)[
 You align most with The Common Good Approach.
 
 You focus on what does the most good for the relationships around you and compassion for others.
 ]
+
+[[Restart Quiz->start]] 
 
 
 :: start {"position":"375,300","size":"100,100"}
