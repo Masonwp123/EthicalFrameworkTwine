@@ -1,0 +1,189 @@
+:: StoryTitle
+cs239
+
+
+:: StoryData
+{
+  "ifid": "2508B39C-9378-49CF-A6E9-420B68F880ED",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "start",
+  "zoom": 1
+}
+
+
+:: Q1 {"position":"375,425","size":"100,100"}
+You find a wallet with $200 and the owner's ID.
+
+(link: "Return it with everything inside")[
+(set: $just to $just + 1)
+(set: $virtue to $virtue + 1)
+(goto: "Q2")
+]
+
+(link: "Keep the money and report the crime")[
+(set: $rights to $rights + 1)
+(goto: "Q2")
+]
+
+(link: "Donate the money to charity")[
+(set: $util to $util + 1)
+(goto: "Q2")
+]
+
+(link: "Contact the owner and make sure they’re okay")[
+(set: $cgood to $cgood + 1)
+(goto: "Q2")
+]
+
+
+:: Q2 {"position":"375,550","size":"100,100"}
+A friend asks if you like their new outfit, but you think it looks bad.
+
+(link: "Tell the truth")[
+(set: $just to $just + 1)
+(goto: "Q3")
+]
+
+(link: "Lie to spare their feelings")[
+(set: $cgood to $cgood + 1)
+(goto: "Q3")
+]
+
+(link: "Give a balanced answer (some truth, some kindness)")[
+(set: $virtue to $virtue + 1)
+(goto: "Q3")
+]
+
+(link: "Say its their right to choose to wear it out")[
+(set: $rights to $rights + 1)
+(goto: "Q3")
+]
+
+
+:: Q3 {"position":"375,675","size":"100,100"}
+You see a stranger struggling to carry groceries.
+
+(link: "Help them because it’s the right thing to do")[
+(set: $just to $just + 1)
+(set: $rights to $rights + 1)
+(goto: "Q4")
+]
+
+(link: "Help them because it builds good character")[
+(set: $virtue to $virtue + 1)
+(goto: "Q4")
+]
+
+(link: "Help because they clearly need support")[
+(set: $cgood to $cgood + 1)
+(goto: "Q4")
+]
+
+(link: "Help because it increases overall happiness")[
+(set: $util to $util + 1)
+(goto: "Q4")
+]
+
+
+:: Q4 {"position":"375,800","size":"100,100"}
+You could break a small rule to help many people.
+
+(link: "Follow the rule no matter what")[
+(set: $just to $just + 1)
+(goto: "Q5")
+]
+
+(link: "Break the rule if it helps the most people")[
+(set: $util to $util + 1)
+(goto: "Q5")
+]
+
+(link: "Do it because it is a good thing to do")[
+(set: $virtue to $virtue + 1)
+(set: $rights to $rights + 1)
+(goto: "Q5")
+]
+
+(link: "Consider how it affects the people involved personally")[
+(set: $cgood to $cgood + 1)
+(goto: "Q5")
+]
+
+
+:: Q5 {"position":"375,925","size":"100,100"}
+You have to make a tough decision that affects others.
+
+(link: "Choose the option with the best overall outcome")[
+(set: $util to $util + 1)
+(goto: "Results")
+]
+
+(link: "Stick to your moral rules")[
+(set: $just to $just + 1)
+(goto: "Results")
+]
+
+(link: "Act based on your character and values")[
+(set: $virtue to $virtue + 1)
+(goto: "Results")
+]
+
+(link: "Do not do it because it interferes with there individual rights")[
+(set: $rights to $rights + 1)
+(goto: "Results")
+]
+
+(link: "Focus on relationships and care for others")[
+(set: $cgood to $cgood + 1)
+(goto: "Results")
+]
+
+
+:: Results {"position":"375,1050","size":"100,100"}
+Your results:
+
+(if: $util >= $just and $util >= $virtue and $util >= $rights and $util >= $cgood)[
+You align most with The Utilitarian Approach.
+
+You focus on outcomes and believe the best action is the one that creates the greatest good for the most people.
+]
+
+(else-if: $just >= $util and $just >= $virtue and $just >= $rights and $just >= $cgood)[
+You align most with The Justice Approach.
+
+You believe in following rules and duties, no matter the outcome.
+]
+
+(else-if: $virtue >= $util and $virtue >= $just and $virtue >= $rights and $virtue >= $cgood)[
+You align most with The Virtue Approach.
+
+You focus on being a good person and acting with strong moral character.
+]
+
+(else-if: $rights >= $util and $rights >= $just and $rights >= $virtue and $rights >= $cgood)[
+You align most with The Rights Approach.
+
+You prioritize the individual rights of yourself and others over anything.
+]
+
+(else:)[
+You align most with The Common Good Approach.
+
+You focus on what does the most good for the relationships around you and compassion for others.
+]
+
+
+:: start {"position":"375,300","size":"100,100"}
+(set: $util to 0)
+(set: $just to 0)
+(set: $virtue to 0)
+(set: $rights to 0)
+(set: $cgood to 0)
+
+
+Welcome to the Ethics Quiz!
+
+You’ll be given a series of situations. Choose what you would most likely do.
+
+[[Start the quiz->Q1]]
